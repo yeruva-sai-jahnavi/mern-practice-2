@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 4 - Date and Time</title>
+</head>
+
+<body>
+    <h1>Date and Time</h1>
+    <p>Yeruva Sai Jahnavi</p>
+
+    <button onclick="showDate()">Show Date</button>
+    <div id="date"></div>
+
+    <br><br>
+
+    <button onclick="showTime()">Show Time</button>
+    <div id="time"></div>
+
+
+
+    <script>
+        function showDate() {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const date = new Date().toLocaleDateString('en-IN', options);
+            document.getElementById('date').innerText = date;
+        }
+
+        function showTime() {
+            const time = new Date().toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' });
+            document.getElementById('time').innerText = time;
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Javascript Task 3 - Calculator</title>
+</head>
+
+<body>
+    <h1>Multiply and Divide</h1>
+    <p>Yeruva Sai Jahnavi</p>
+    <div>
+        <label for="num1">1st Number:</label>
+        <input type="number" id="num1">
+    </div>
+
+    <div>
+        <label for="num2">2nd Number:</label>
+        <input type="number" id="num2">
+    </div>
+
+    <button onclick="calculate('multiply')">Multiply</button>
+    <button onclick="calculate('divide')">Divide</button>
+
+    <div id="result"></div>
+
+    <script>
+        function calculate(operand) {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Please enter valid numbers.');
+                return;
+            }
+
+            let result;
+
+            if (operand === 'multiply') {
+                result = num1 * num2;
+            } else if (operand === 'divide') {
+                if (num2 === 0) {
+                    alert('Cannot divide by zero.');
+                    return;
+                }
+                result = num1 / num2;
+            }
+
+            document.getElementById('result').innerText = `The result is: ${result}`;
+        }
+    </script>
+</body>
+
+</html>

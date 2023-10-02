@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 8 - Registration Form</title>
+    <style>
+        td {
+            padding: 3px;
+        }
+
+        body {
+            background: linear-gradient(to bottom, #fffca1, #cf6ee4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: blue;
+        }
+
+        .label {
+            font-weight: bold;
+        }
+
+        #button {
+            justify-content: center;
+            text-align: center;
+            width: 200px;
+            padding: 10px;
+            border-radius: 10px;
+            color: white;
+            background-color: red;
+        }
+
+        div {
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .error-message {
+            color: red;
+            display: none;
+        }
+
+        .error {
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1>Registration Form</h1>
+        <p>Yeruva Sai Jahnavi</p>
+        <table>
+            <tr>
+                <td class="label">First Name</td>
+                <td><input type="text" name="First Name" id="FirstName"></td>
+                <td><span id="firstNameerror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Last Name</td>
+                <td><input type="text" name="Last Name" id="LastName"></td>
+                <td><span id="lastNameerror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Email</td>
+                <td><input type="email" name="email" id="email"></td>
+                <td><span id="emailerror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Password</td>
+                <td><input type="password" name="password" id="password"></td>
+                <td><span id="passworderror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Re-Password</td>
+                <td><input type="password" name="re-password" id="re-password"></td>
+                <td><span id="repassworderror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Gender :</td>
+                <td><input type="radio" name="Gender" id="male" value="male">Male<br><br>
+                    <input type="radio" name="Gender" id="female" value="female">Female
+                </td>
+                <td><span id="gendererror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Age</td>
+                <td><input type="number" name="age" id="age"></td>
+                <td><span id="ageerror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Phone Number</td>
+                <td><input type="number" name="phone number" id="phonenumber"></td>
+                <td><span id="phonenumbererror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Address</td>
+                <td><textarea id="address" name="address"></textarea></td>
+                <td><span id="addresserror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">State</td>
+                <td><input type="text" name="state" id="state"></td>
+                <td><span id="stateerror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Country</td>
+                <td><select style="width: 180px" id="country">
+                        <option>Select the Country</option>
+                        <option>India</option>
+                        <option>Pakistan</option>
+                        <option>United States of America</option>
+                        <option>United Kingdom</option>
+                        <option>Australia</option>
+                        <option>New Zealand</option>
+                        <option>South Africa</option>
+                        <option>Sri Lanka</option>
+                        <option>Afghanistan</option>
+                    </select>
+                </td>
+                <td><span id="countryerror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td class="label">Languages Known</td>
+                <td>
+                    <input type="checkbox" name="languages" id="english">English
+                    <input type="checkbox" name="languages" id="kannada">Kannada
+                    <input type="checkbox" name="languages" id="hindi">Hindi
+                    <input type="checkbox" name="languages" id="telugu">Telugu
+                </td>
+                <td><span id="languageserror" class="error-message"></span></td>
+            </tr>
+            <tr>
+                <td><input type="checkbox" name="correct details" id="correct_details"> Hereby I declare all the given
+                    details are True</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>Log in to <a href="https://ethnus.com/">ETHNUS</a> Website</td>
+            </tr>
+        </table><br><br>
+        <input type="button" value="Register" name="button" id="button" onclick="validateForm()"><br><br>
+    </div>
+    <script>
+        function validateForm() {
+            // Get form field values
+            var firstName = document.getElementById("FirstName").value;
+            var lastName = document.getElementById("LastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var repassword = document.getElementById("re-password").value;
+            var age = document.getElementById("age").value;
+            var address = document.getElementById("address").value;
+            var state = document.getElementById("state").value;
+            var country = document.getElementById("country").value;
+            var gender = document.querySelector('input[name="Gender"]:checked');
+            var languages = document.querySelectorAll('input[name="languages"]:checked');
+
+            // Get error message elements
+            var firstNameError = document.getElementById("firstNameerror");
+            var lastNameError = document.getElementById("lastNameerror");
+            var emailError = document.getElementById("emailerror");
+            var passwordError = document.getElementById("passworderror");
+            var ageError = document.getElementById("ageerror");
+            var addressError = document.getElementById("addresserror");
+            var stateError = document.getElementById("stateerror");
+            var countryError = document.getElementById("countryerror");
+            var genderError = document.getElementById("gendererror");
+            var languagesError = document.getElementById("languageserror");
+            var inputFields = document.querySelectorAll("input");
+            inputFields.forEach(function (field) {
+                field.classList.remove("error");
+            });
+            var errorMessages = document.getElementsByClassName("error-message");
+            for (var i = 0; i < errorMessages.length; i++) {
+                errorMessages[i].style.display = "none";
+            }
+            var isValid = true;
+            if (firstName.trim() === "") {
+                firstNameError.textContent = "POOR";
+                firstNameError.style.display = "block";
+                document.getElementById("FirstName").classList.add("error");
+                isValid = false;
+            }
+            if (lastName.trim() === "") {
+                lastNameError.textContent = "POOR";
+                lastNameError.style.display = "block";
+                document.getElementById("LastName").classList.add("error");
+                isValid = false;
+            }
+            if (email.trim() === "" || !email.includes("@")) {
+                emailError.textContent = "POOR";
+                emailError.style.display = "block";
+                document.getElementById("email").classList.add("error");
+                isValid = false;
+            }
+            if (password.trim() === "") {
+                passwordError.textContent = "POOR";
+                passwordError.style.display = "block";
+                document.getElementById("password").classList.add("error");
+                isValid = false;
+            }
+            if (repassword.trim() === "" || repassword !== password) {
+                passwordError.textContent = "POOR AND MISMATCH";
+                passwordError.style.display = "block";
+                //document.getElementById("password").classList.add("error");
+                document.getElementById("re-password").classList.add("error");
+                isValid = false;
+            }
+            if (age.trim() === "") {
+                ageError.textContent = "POOR";
+                ageError.style.display = "block";
+                document.getElementById("age").classList.add("error");
+                isValid = false;
+            } else if (isNaN(age) || age < 18 || age > 100) {
+                ageError.textContent = "POOR";
+                ageError.style.display = "block";
+                document.getElementById("age").classList.add("error");
+                isValid = false;
+            }
+            if (address.trim() === "") {
+                addressError.textContent = "POOR";
+                addressError.style.display = "block";
+                document.getElementById("address").classList.add("error");
+                isValid = false;
+            }
+            if (state.trim() === "") {
+                stateError.textContent = "POOR";
+                stateError.style.display = "block";
+                document.getElementById("state").classList.add("error");
+                isValid = false;
+            }
+            if (phoneNumber.trim() === "") {
+                phoneNumberError.textContent = "Phone number is required.";
+                phoneNumberError.style.display = "block";
+                document.getElementById("phonenumber").classList.add("error");
+                isValid = false;
+            } else if (!/^\d{10}$/.test(phoneNumber)) {
+                phoneNumberError.textContent = "Enter a valid 10-digit phone number.";
+                phoneNumberError.style.display = "block";
+                document.getElementById("phonenumber").classList.add("error");
+                isValid = false;
+            }
+            if (isValid) {
+                alert("Validation successful!");
+            }
+        }
+    </script>
+</body>
+
+</html>

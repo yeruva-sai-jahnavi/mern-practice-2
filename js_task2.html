@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 2 - Letters in Alphabetical Order</title>
+</head>
+
+<body>
+    <h1>Letters in Alphabetical Order</h1>
+    <p>Yeruva Sai Jahnavi</p>
+    <script>
+        function alphabetizeString(str) {
+
+            // 1. split string into chars
+            strArr = str.split("");
+
+            // 2. sort the array
+            strArr.sort();
+            // 3. join the array and print
+            document.write(str + " with letters in alphabetical order is " + strArr.join("") + ".");
+        }
+
+        alphabetizeString("webmaster");
+    </script>
+</body>
+
+</html>

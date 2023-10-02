@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Task 6 - Instagram form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .error {
+            color: red;
+        }
+
+        * {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        #username,
+        #password,
+        #login,
+        .error {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .card {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: -1px 4px 3px 0px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(243, 243, 243);
+        }
+
+        .icon {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            background-color: rgb(226, 228, 231);
+            border-radius: 5px;
+            border: 1px solid rgb(197, 191, 191);
+        }
+
+        .icon i {
+            margin: 0px 5px;
+        }
+
+        button {
+            width: auto;
+            padding: 10px;
+            background-color: #2390de;
+            color: white;
+            border-radius: 5px;
+            border: 2px solid white;
+        }
+
+        #link {
+            text-decoration: none;
+            color: #0095ff
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid rgb(197, 191, 191);
+        }
+
+        i {
+            padding: 10px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            color: #2f353a;
+        }
+
+        .rev a {
+            margin-left: 10px;
+        }
+
+        h5,
+        .rev {
+            font-family: Arial;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Yeruva Sai Jahnavi</p>
+    <div class="card">
+        <h1>Instagram</h1>
+        <div class="icon">
+            <i class="fas fa-user"></i>
+            <input type="text" name="username" id="username" placeholder="Username">
+        </div><br>
+        <div class="icon">
+            <i class="fas fa-lock"></i>
+            <input type="password" name="pass" id="password" placeholder="Password">
+        </div><br>
+        <button onclick="loginvalidation()" id="login">Login</button><br><br>
+        <div class="rev">
+            <input type="checkbox" name="remember me"> Remember me
+            <a id="link" href="forgetpassword.html">Forgot password?</a><br><br>
+        </div>
+        <p id="errorText" class="error"></p><br>
+    </div><br>
+    <p>Don't have an account! <a id="link" href="www.createaccount.com">Sign up here</a></p>
+
+    <script>
+        function loginvalidation() {
+            var usernameOrEmail = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+            var errorText = document.getElementById("errorText");
+            if (password.length < 6) {
+                errorText.textContent = "Incorrect username or password.";
+                return;
+            }
+            if (usernameOrEmail === "jahnavi123" && password === "password123") {
+                alert("Login successful!");
+            } else {
+                errorText.textContent = "Incorrect username or password.";
+            }
+        }
+    </script>
+</body>
+
+</html>

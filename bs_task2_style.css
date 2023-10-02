@@ -1,0 +1,23 @@
+* {
+    font-family: "Poppins";
+}
+
+#wrapper {
+    background-color: #f8ba35;
+}
+
+#brand {
+    font-size: 55px;
+}
+
+.flaticon {
+    height: 45px;
+}
+
+#nav-bar {
+    margin: 0px 60px;
+}
+
+#home {
+    color: #f8ba35;
+}

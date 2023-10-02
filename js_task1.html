@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 1 - Reverse a Number</title>
+</head>
+
+<body>
+    <h1>Reverse a Number</h1>
+    <p>Yeruva Sai Jahnavi</p>
+
+    <script>
+        function reverseNum(n) {
+            // eg: 32243
+            // 1. convert to string
+            strNum = "" + n;
+
+            // 2. split into ["3", "2" "2" "4" "3"]
+            digits = strNum.split("");
+
+            // 3. reverse array
+            digitsRev = digits.reverse();
+
+            // 4. join digits and output
+            document.writeln("The number reversed is " + digitsRev.join("") + ".");
+        }
+        let x = 32243
+        document.writeln("The number to reverse is: " + x + ".");
+        reverseNum(x);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task 7 - Train</title>
+    <style>
+        #train {
+            width: 100px;
+            position: absolute;
+            top: 250px;
+            left: 0;
+            transition: left 2s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Javascript Task 7 - Train</h1>
+    <p>Yeruva Sai Jahnavi</p>
+    <br>
+
+    <!-- <img src="train.jpg" alt="Train" id="train"> -->
+    <img src="train.gif" alt="Train" id="train">
+    <p>Click on the following buttons to handle animation</p>
+
+    <button onclick="startTrain()">Start</button>
+    <button onclick="stopTrain()">Stop</button>
+    <button onclick="resetTrain()">Reset</button>
+
+    <script>
+        let trainPosition = 0;
+        let isMoving = false;
+        let trainInterval;
+
+        function startTrain() {
+            if (!isMoving) {
+                isMoving = true;
+                trainInterval = setInterval(moveTrain, 100);
+            }
+        }
+
+        function stopTrain() {
+            isMoving = false;
+            clearInterval(trainInterval);
+        }
+
+        function resetTrain() {
+            stopTrain();
+            document.getElementById('train').style.left = 0 + 'px';
+        }
+
+        function moveTrain() {
+            trainPosition += 6; // speed
+            document.getElementById('train').style.left = trainPosition + 'px';
+        }
+    </script>
+</body>
+
+</html>
