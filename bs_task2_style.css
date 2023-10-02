@@ -8,6 +8,7 @@
 
 #brand {
     font-size: 55px;
+    color: #030f27;
 }
 
 .flaticon {
@@ -18,6 +19,67 @@
     margin: 0px 60px;
 }
 
+.bottom-bar {
+    background-color: #030f27;
+}
 #home {
     color: #f8ba35;
+}
+
+#carouselExample {
+    margin: 0 60px;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 60px;
+}
+
+button {
+    border-radius: 0px;
+}
+
+.carousel-item {
+}
+
+.carousel-caption {
+    padding-top: 170px;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    align-items: center;
+    background-color: #030f276d;
+    transition: 0.5s;
+}
+
+.carousel-caption:hover {
+    background-color: #030f2739;
+}
+.car-img {
+    object-fit: cover;
+    width: 1321px;
+    height: 600px;
+}
+
+#builder-icon,
+#building-icon,
+#service-icon {
+    width: 70px;
+    height: 70px;
+    margin-right: 20px;
+}
+
+.grid-col {
+    padding: 30px;
+}
+
+.yellow-grid {
+    background-color: #f8ba35;
+}
+
+.black-grid {
+    color: #f8ba35;
+    background-color: #030f27;
 }
